@@ -16,7 +16,7 @@ function create_users_table($conn) {
 }
 
 function create_user($conn, $username, $password, $email) {
-    $hidden_password = password_hash($password, PASSWORD_DEFUALT);
+    $hidden_password = password_hash($password, PASSWORD_DEFAULT);
     $sql = "INSERT INTO users (username, password, email)
             VALUES ('$username', '$hidden_password', '$email')";
 

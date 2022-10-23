@@ -15,7 +15,7 @@ function check_password($request_user, $request_pass) {
 
     if($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
-            if ($row["password"] == $request_pass) {
+            if(password_verify($request_pass, $row["password"])) {
                 $success = True;
             } else {
                 echo "Invalid try again";

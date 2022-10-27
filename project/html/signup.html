@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<HTML>
+	<HEAD>
+           <meta name="viewport" content="width=device-width, initial-scale=1">  
+	   <TITLE>Signup Page</TITLE>
+	   <LINK rel="stylesheet" href="./style.css"></LINK>
+	</HEAD>
+	<BODY>
+                <center> <h1>Sign Up</h1> </center>
+                <form action="php/add_user_mq.php" method="post">
+                </span>
+                    <div class="container">
+	                <input type="hidden" id="type" name="type" value="add_user">
+			<label for="username-id">User Name:</label> <br/>
+			<input type="text" id="username-id" name="username" maxLength=32/> <br/>
+
+			<label for="password-id">Password :</label> <br/>
+			<input type="password" id="password-id" name="password" /> <br/>
+
+			<label for="email-id">Email:</label> <br/>
+			<input type="email" name="email" id="email-id" /> <br/>
+                        <button type="submit">Signup</button>
+		    </div>
+		</form>
+                <p> Already have an account
+                   <a href="./login.html">Login</a>
+                </p>
+	</BODY>
+</HTML>

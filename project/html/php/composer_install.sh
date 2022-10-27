@@ -12,5 +12,5 @@ wget -O /tmp/composer-setup.php https://getcomposer.org/installer
 php /tmp/composer-setup.php
 apt-get install php 7.4-mbstring
 
-composer.phar --version
-composer.phar install
+./composer.phar --version
+./composer.phar install

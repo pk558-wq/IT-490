@@ -1,18 +1,17 @@
 <?php
-    function connect_to_db() {
-        $servername = "localhost";
-        $username = "itadmin";
-        $password = "***";
-        $dbname = "***";
+   include_once 'config.php';
 
-        $conn = new mysqli($servername, $username, $password, $dbname);
+   function connect_to_db() {
+       // Create connection
+       $conn = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE);
+       // Check connection
+       if ($conn->connect_error) {
+          die("Connection failed: " . $conn->connect_error);
+       } 
+       return $conn;
+   }
 
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-        return $conn;
-    }
-    function close_db($conn) {
-        $conn->close();
-    }
+   function close_db($conn) {
+      $conn->close();
+   }
 ?>

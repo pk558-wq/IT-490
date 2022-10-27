@@ -3,7 +3,7 @@
 require_once __DIR__ . '/vendor/autoload.php';
 include_once 'config.php';
 include_once 'checkpass.php';
-include_once 'create_tables.php';
+include_once 'create_users.php';
 
 use PhpAmqpLib\Connection\AMQPStreamConnection;
 use PhpAmqpLib\Message\AMQPMessage;
@@ -16,6 +16,7 @@ $channel->queue_declare('rpc_queue', false, false, false, false);
 echo " [x] Awaiting RPC requests\n";
 
 $callback = function ($req) {
+    //client sends messages here, appropriate action is done based on type
     echo ' [x] Received ', $req->body, "\n";
     $data = json_decode($req->body, true);
     $response = array('code' => '1', 'status' => 'failed');

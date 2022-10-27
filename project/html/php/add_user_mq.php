@@ -26,7 +26,6 @@ function do_add_user() {
    if ($response['code'] == 0) {
       redirect("../login.html");
    } else {
-      $_SESSION['Error'] = $response['message'];
       redirect("../signup.html");
    }
 }

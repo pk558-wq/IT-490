@@ -5,10 +5,12 @@
 # Or
 
 # cd ~
-curl -sS https://getcomposer.org/installer -o /tmp/composer-setup.php
+wget -O /tmp/composer-setup.php https://getcomposer.org/installer
 
 #* Check if composer is installed
 #sudo mv composer.phar /usr/local/bin/composer
 php /tmp/composer-setup.php
-composer --version
-composer install
+apt-get install php 7.4-mbstring
+
+composer.phar --version
+composer.phar install

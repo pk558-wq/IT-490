@@ -9,4 +9,7 @@ define('MYSQL_PASSWORD', 'itadminpass');
 define('MYSQL_DATABASE', 'IT490');
 define('FDA_API_KEY', 'enter the key');
 define('MAX_FDA_PRODUCTS', 5000);
+define('GMAIL_USER_NAME', 'itadmin');
+define('GMAIL_ACCOUNT', 'youremail');
+define('GMAIL_APP_PASSWORD', 'yourpassword');
 ?>

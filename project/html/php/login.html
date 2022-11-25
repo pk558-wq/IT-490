@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>   
+<head>  
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+<title> Login Page </title>  
+<link rel="stylesheet" href="./style.css"></link>
+</head>
+<body>
+    <center> <h1> Login Form </h1> </center>
+    <form action="./login_mq.php" method="post">
+        <div class="container">
+	    <input type="hidden" id="type" name="type" value="login">
+            <label>Username : </label>
+            <input type="text" placeholder="Enter Username" name="username" required>
+            <label>Password : </label>
+            <input type="password" placeholder="Enter Password" name="password" required>
+            <button type="submit">Login</button>
+        </div>
+    </form>
+    <p> Create a new account
+      <a href="./signup.html">Signup</a>
+    </p>
+</body>
+</html>

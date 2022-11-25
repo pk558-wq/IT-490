@@ -1,0 +1,118 @@
+<style>
+Body {
+  font-family: Calibri, Helvetica, sans-serif;
+  background-color: pink;
+}
+button {
+       background-color: #4CAF50;
+       width: 100%;
+        color: orange;
+        padding: 15px;
+        margin: 10px 0px;
+        border: none;
+        cursor: pointer;
+         }
+ form {
+        border: 3px solid #f1f1f1;
+    }
+ input[type=text], input[type=password], input[type=email] {
+        width: 100%;
+        margin: 8px 0;
+        padding: 12px 20px;
+        display: inline-block;
+        border: 2px solid green;
+        box-sizing: border-box;
+    }
+ button:hover {
+        opacity: 0.7;
+    }
+  .cancelbtn {
+        width: auto;
+        padding: 10px 18px;
+        margin: 10px 5px;
+    }
+
+
+ .container {
+        padding: 25px;
+        background-color: lightblue;
+    }
+
+    table, th, td {
+       border: 1px solid;
+       border-collapse: collapse;
+       padding: 8px;
+    }
+
+    th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+
+tr:nth-child(even){background-color: #f2f2f2;}
+
+        .inline{
+            display: inline-block;
+            float: right;
+            margin: 20px 0px;
+        }
+
+        input, button{
+            height: 34px;
+        }
+
+    .pagination {
+        display: inline-block;
+    }
+    .pagination a {
+        font-weight:bold;
+        font-size:18px;
+        color: black;
+        float: left;
+        padding: 8px 16px;
+        text-decoration: none;
+        border:1px solid black;
+    }
+
+    .pagination a.active {
+            background-color: pink;
+    }
+    .pagination a:hover:not(.active) {
+        background-color: skyblue;
+    }
+
+
+
+    ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+
+</style>

@@ -7,24 +7,25 @@ function fetch_user_products_from_db($conn, $username, $page_number, $page_size)
 	# First get number of rows from DB
 	$sql = "SELECT COUNT(*) FROM products p INNER JOIN USERS_NDC u on p.product_ndc = u.product_ndc WHERE u.username = '$username'";
 
-        $result = $conn->query($sql);
         $count = 0; 
-        while($row = mysqli_fetch_array($result)) {
-                $count = $row['COUNT(*)'];
-	}
+        if ($result = $conn->query($sql)){
+            while($row = mysqli_fetch_array($result)) {
+                    $count = $row['COUNT(*)'];
+	    }
+        }
 
 	$offset = $page_size * ($page_number - 1);
 
         $sql = "SELECT p.product_ndc as product_ndc, p.generic_name as generic_name, p.labeler_name as labeler_name, p.brand_name as brand_name FROM products p INNER JOIN USERS_NDC u on p.product_ndc = u.product_ndc WHERE u.username = '$username' LIMIT $page_size OFFSET $offset";
 
 
-	$result = $conn->query($sql);
-	$results = $result->fetch_all(MYSQLI_ASSOC);
-	$response['code'] = 0;
-	$response['count'] = $count;
-	$response['status'] = 'success';
-	$response['results'] = $results;
-
+	if($result = $conn->query($sql)) {
+        	$results = $result->fetch_all(MYSQLI_ASSOC);
+        	$response['code'] = 0;
+        	$response['count'] = $count;
+        	$response['status'] = 'success';
+        	$response['results'] = $results;
+        }
 	return $response;
 }
 

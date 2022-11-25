@@ -5,7 +5,7 @@ function fetch_user_products_from_db($conn, $username, $page_number, $page_size)
 	$response = array('code' => 1, 'status'=>'failed', 'count' => 0);
 
 	# First get number of rows from DB
-	$sql = "SELECT COUNT(*) FROM products p INNER JOIN USERS_NDC u on p.product_ndc = u.product_ndc WHERE u.username = '$username'";
+	$sql = "SELECT COUNT(*) FROM products p INNER JOIN users_ndc u on p.product_ndc = u.product_ndc WHERE u.username = '$username'";
 
         $count = 0; 
         if ($result = $conn->query($sql)){
@@ -16,7 +16,7 @@ function fetch_user_products_from_db($conn, $username, $page_number, $page_size)
 
 	$offset = $page_size * ($page_number - 1);
 
-        $sql = "SELECT p.product_ndc as product_ndc, p.generic_name as generic_name, p.labeler_name as labeler_name, p.brand_name as brand_name FROM products p INNER JOIN USERS_NDC u on p.product_ndc = u.product_ndc WHERE u.username = '$username' LIMIT $page_size OFFSET $offset";
+        $sql = "SELECT p.product_ndc as product_ndc, p.generic_name as generic_name, p.labeler_name as labeler_name, p.brand_name as brand_name FROM products p INNER JOIN users_ndc u on p.product_ndc = u.product_ndc WHERE u.username = '$username' LIMIT $page_size OFFSET $offset";
 
 
 	if($result = $conn->query($sql)) {
